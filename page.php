@@ -15,7 +15,8 @@
 
       <div class="row">
 
-        <div class="col-sm-8 blog-main">
+
+        <div class="blog-main">
 
           <?php get_template_part( 'loop', 'page' ); ?>
 

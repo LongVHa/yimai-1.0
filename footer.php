@@ -9,35 +9,75 @@
  * @since yimai 1.0 1.0
  */
 ?>
-    </div><!-- /.container -->
+    </div><!-- /container -->
 
+	
+	<?php ///////////////////map 
+	
+	if(is_page([59,505,857])){?>
+	
+	<div class="map-container">
+	
+	<?php
+		if(is_page(59)){
+			echo '<h2 class="contact-title">FIND US</h2>';
+		}else if(is_page(505)){
+			echo '<h2 class="contact-title">找到我们</h2>';
+		}else if(is_page(857)){
+			echo '<h2 class="contact-title">找到我們</h2>';
+		}
+	?>
 		
+	<?php echo do_shortcode('[wpgmza id="1"]'); ?>
+		
+	</div>
+	<?php }//end map?>
+	
+	
+	
 	<div class="foot-logos-wrap">	
 	
 			<div class="foot-logo-container">
 						
 				<div id="tpos-wrap">
-				 
-						<div id="tpos-container">
+
+						<div id="tpos-addr">
+							https://www.tpos.co.uk/
+						</div>
+
+						<div id="tpos-container">	
 							<a href="https://www.tpos.co.uk/" target="_blank">
-							<img src="http://www.yimai.co.uk/wp-content/uploads/2017/11/tpos-logo-sm.png"></a>
+							<img src="https://www.yimai.co.uk/wp-content/uploads/2017/11/tpos-logo-sm.png"></a>
+
 						</div>
-						
-						<div id="tpos-addr">Milford House,
-							43 - 55 Milford Street,
-							Salisbury,
-							Wiltshire,
-							SP1 2BP
-						</div>
+					
 						
 				</div>
 
 				
 				<div id="tsi-wrap">
 					<a href="https://www.tradingstandards.uk/" target="_blank">
-					<img src="http://www.yimai.co.uk/wp-content/uploads/2017/11/TSICodeLogosml.png
-					"></a>
+					<img src="https://www.yimai.co.uk/wp-content/uploads/2017/11/TSICodeLogosml.png"></a>
 				</div>
+				
+									
+
+				
+				<div id="naea-wrap">
+				
+					<div id="naea-stmt">
+						<p>The Propertymark logo is a Collective Trademark</p>
+					</div>
+				
+					<div id="naea-container">
+						<a href="http://www.propertymark.co.uk/" target="_blank">
+						<img src="https://www.yimai.co.uk/wp-content/uploads/2018/06/NAEA-logo.png"></a>
+					</div>
+
+					
+					
+				</div>
+
 				
 			</div>	
 	</div>
@@ -101,6 +141,7 @@
 	 <?php } ?>
 	
 	</div>
+
     <?php 
 	  /*
 	   * Always have wp_footer() just before the closing </body>

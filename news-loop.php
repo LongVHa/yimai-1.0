@@ -30,10 +30,9 @@
 	  if (have_posts()) : while (have_posts()) : the_post(); 
 
 	  ?>
-      <div class="blog-post news-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+    		  <div class="blog-post news-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php 
-				/*use featured image as parallax bg image*/
+			/*use featured image as parallax bg image*/
 			   if ( has_post_thumbnail() ) : ?>
 
 			<div class="parallax" style="background-image: url(<?php the_post_thumbnail_url('full'); ?>);">
@@ -62,6 +61,7 @@
 			<?php endif;
 				/*end parallax*/
 			?>	
+
 
         <?php if ( !get_the_title() ) : ?>
         <p class="blog-post-meta"><span class="glyphicon glyphicon-calendar"></span> <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr_e( 'Permanent Link to ', 'bootstrapcanvaswp' ) . get_the_title() ? esc_attr( the_title_attribute() ) : esc_attr_e( '[No Title]', 'bootstrapcanvaswp' ); ?>"><?php the_time( $date_format ) ?></a> by <span class="glyphicon glyphicon-user"></span> <?php the_author_link() ?></p>
@@ -95,9 +95,6 @@
         <?php edit_post_link(__( 'Edit', 'bootstrapcanvaswp' ),'<span class="glyphicon glyphicon-pencil"></span> ','<strong> |</strong>'); ?> 
         <?php endif; ?> 
       
-        <?php if ( has_tag() ) : ?>
-          <p class="blog-post-meta"><span class="glyphicon glyphicon-tags"></span> <?php the_tags( __( 'Tags: ', 'bootstrapcanvaswp' ) ); ?></p>
-        <?php endif; ?>
 
       </div><!-- /.blog-post -->
       <!--

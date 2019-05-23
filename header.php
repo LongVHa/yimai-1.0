@@ -34,16 +34,6 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-104780868-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 	
 	
 	<?php
@@ -172,7 +162,7 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 		
 			<div id="logo" class="logo">
 				
-			 <a href="/mn"><img class="custom-logo" width="100" height="121" src="http://www.yimai.co.uk/wp-content/uploads/2017/04/logo.png">
+			 <a href="/mn"><img class="custom-logo" width="100" height="121" src="https://www.yimai.co.uk/wp-content/uploads/2017/04/logo.png">
 	
 			<p class="lead blog-description cn-lead">置业顾问</p></a>
 
@@ -184,7 +174,7 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 		
 			<div id="logo" class="logo">
 				
-			 <a href="/ct"><img class="custom-logo" width="100" height="121" src="http://www.yimai.co.uk/wp-content/uploads/2017/04/logo.png">
+			 <a href="/ct"><img class="custom-logo" width="100" height="121" src="https://www.yimai.co.uk/wp-content/uploads/2017/04/logo.png">
 	
 			<p class="lead blog-description cn-lead">房產顧問</p></a>
 
@@ -217,14 +207,17 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 	  
 	  <div id="flags-wrap">
 	  
-		  <div class="flag-item"><a href="/">EN</a></div>
-		  <div class="flag-item"><a href="/mn">简</a></div>
-		  <div class="flag-item"><a href="/ct">繁</a></div>
+		  <span class="menu-contact-item"><img src="https://www.yimai.co.uk/wp-content/uploads/2018/05/tel.png" />+44 7702 171463</span>
+		  <span class="menu-contact-item"><img src="https://www.yimai.co.uk/wp-content/uploads/2018/05/email.png" />info@yimai.co.uk</span>
 	  
+		  <span class="flag-item"><span class="divider">|</span><a href="/">EN</a></span>
+		  <span class="flag-item"><a href="/mn">简</a></span>
+		  <span class="flag-item"><a href="/ct">繁</a> <span class="divider">|</span> </span>
+
+		  
+
 	  </div>
 
-	  
-	  
 	  
 	<?php
 	
@@ -273,7 +266,7 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 		
 	<?php }else if($langType[0] == 'CT'){ ?>
 	
-		<div id="we-help"><a href="/ct/关于我们/">我們幫忙</a></div>
+		<div id="we-help"><a href="/ct/關于我們/">我們幫忙</a></div>
 	
 
 	<?php }else{ ?>
@@ -318,8 +311,6 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 </nav><!-- #2nd site-navigation -->
 	
 
-
-
     <?php 
 	
 	$slideName = get_post_custom_values('slideName', $post_id); 
@@ -332,6 +323,49 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 	
 	?>
 		 
+<?php 
+/*use featured image as parallax bg image*/
+
+			   if ( has_post_thumbnail() ) : ?>
+
+			<div class="parallax" style="background-image: url(<?php the_post_thumbnail_url('full'); ?>);">
+
+			<h3 class="plx-page-title"><?php the_title(); ?></h3>
+				 
+				<?php
+					/*Get sub heading*/
+					
+					$subHeadTxt = get_post_custom_values('subHeading', $post_id); 
+					
+					$subHeading = preg_replace("[^a-zA-Z., ]", "", $subHeadTxt);
+					
+					echo '<div class="subHeading">'.$subHeading[0].'</div>';
+					
+					?>
+
+			</div>	
+			
+					
+			<?php else : 		
+			
+					if(is_page([6,512,843])){
+						
+					}elseif(is_page($page = 'contact-us')){ ?>
+					
+					<h2 class="contact-page-title"><?php the_title(); ?></a></h2>
+					
+					<?php 
+					}elseif(is_category(1) || in_category(1)){ // remove title if is blog archive page				
+					}else{ ?>
+					
+					<h1 class="page-title"><?php the_title(); ?></a></h1>
+					
+					<?php }?>
+					
+
+			<?php endif;
+	/*end parallax*/
+?>	
 
 	
     <div class="container">

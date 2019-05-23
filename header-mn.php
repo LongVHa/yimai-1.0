@@ -16,6 +16,7 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
  
 ?><!DOCTYPE html>
 
+
 <?php if($langType[0] == 'MN'){ //change language type to Mandarin?>
 <html lang="zh-hans">
 
@@ -150,12 +151,11 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 	
 </div>
 
-
 	  	<div id="logo-container">
 		
 			<div id="logo" class="logo">
 				
-				 <a href="/mn"><img class="custom-logo" width="100" height="121" src="http://www.yimai.co.uk/wp-content/uploads/2017/04/logo.png">
+				 <a href="/mn"><img class="custom-logo" width="100" height="121" src="https://www.yimai.co.uk/wp-content/uploads/2017/04/logo.png">
 		
 				<p class="lead blog-description cn-lead">置业顾问</p></a>
 
@@ -173,10 +173,13 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
       <ul id="primary-menu" class="nav-menu">
 	  
 	  <div id="flags-wrap">
+
+		  <span class="menu-contact-item"><img src="https://www.yimai.co.uk/wp-content/uploads/2018/05/tel.png" />+44 7702 171463</span>
+		  <span class="menu-contact-item"><img src="https://www.yimai.co.uk/wp-content/uploads/2018/05/email.png" />info@yimai.co.uk</span>
 	  
-		  <div class="flag-item"><a href="/">EN</a></div>
-		  <div class="flag-item"><a href="/mn">简</a></div>
-		  <div class="flag-item"><a href="/ct">繁</a></div>
+		  <span class="flag-item"><span class="divider">|</span><a href="/">EN</a></span>
+		  <span class="flag-item"><a href="/mn">简</a></span>
+		  <span class="flag-item"><a href="/ct">繁</a><span class="divider">|</span></span>
 	  
 	  </div>
 

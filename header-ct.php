@@ -168,7 +168,7 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 				
 					<div id="logo" class="logo">
 						
-					 <a href="/ct"><img class="custom-logo" width="100" height="121" src="http://www.yimai.co.uk/wp-content/uploads/2017/04/logo.png">
+					 <a href="/ct"><img class="custom-logo" width="100" height="121" src="https://www.yimai.co.uk/wp-content/uploads/2017/04/logo.png">
 			
 					<p class="lead blog-description cn-lead">房產顧問</p></a>
 
@@ -187,9 +187,12 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
 	  
 	  <div id="flags-wrap">
 	  
-		  <div class="flag-item"><a href="/">EN</a></div>
-		  <div class="flag-item"><a href="/mn">简</a></div>
-		  <div class="flag-item"><a href="/ct">繁</a></div>
+		  <span class="menu-contact-item"><img src="https://www.yimai.co.uk/wp-content/uploads/2018/05/tel.png" />+44 7702 171463</span>
+		  <span class="menu-contact-item"><img src="https://www.yimai.co.uk/wp-content/uploads/2018/05/email.png" />info@yimai.co.uk</span>
+	  
+		  <span class="flag-item"><span class="divider">|</span><a href="/">EN</a></span>
+		  <span class="flag-item"><a href="/mn">简</a></span>
+		  <span class="flag-item"><a href="/ct">繁</a><span class="divider">|</span></span>
 	  
 	  </div>
 
@@ -217,7 +220,7 @@ $langType = preg_replace("[^A-Z]", "", $languageType);
       
 	<ul id="secondary-menu">
 
-		<div id="we-help"><a href="/ct/关于我们/">我們幫忙</a></div>
+		<div id="we-help"><a href="/ct/關于我們/">我們幫忙</a></div>
 
 	
 			<?php

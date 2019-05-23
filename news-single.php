@@ -22,7 +22,9 @@
 	display:none!important;
 }
 </style>
+
 	  <?php 
+	  
 	  
 	  /* Start the Loop */
 	  if (have_posts()) : while (have_posts()) : the_post(); 
@@ -34,8 +36,6 @@
 			<?php 
 			// category bread
 			if ( is_single()){
-			
-			echo '&laquo ';
 
 			// Get the parent category
 			$category = get_the_category();
@@ -49,10 +49,11 @@
 			$catName = $category[0]->cat_name;
 			
 				if($catName == 'English Blog'){
-					echo '<a href=" ' . $category_link . ' ">Blog</a>';
+					echo '<a href=" ' . $category_link . ' ">&laquo; Blog</a>';
 				}else if($catName = 'Cantonese Blog' || $catName = 'Mandarin Blog'){
-					echo '<a href=" ' . $category_link . ' ">博客</a>';
+					echo '<a href=" ' . $category_link . ' ">&laquo; 博客</a>';
 				}			
+
 						
 			} ?> 
 
@@ -92,11 +93,6 @@
         <?php edit_post_link(__( 'Edit', 'bootstrapcanvaswp' ),'<span class="glyphicon glyphicon-pencil"></span> ','<strong> |</strong>'); ?> 
         <?php endif; ?> 
       
-        <?php if ( has_tag() ) : ?>
-          <p class="blog-post-meta"><span class="glyphicon glyphicon-tags"></span> <?php the_tags( __( 'Tags: ', 'bootstrapcanvaswp' ) ); ?></p>
-        <?php endif; ?>
-
-		
 		
 		</div><!--blog entry wrap-->
       </div><!-- /.blog-post -->
@@ -136,3 +132,35 @@
 		  <?php get_search_form(); ?>
         <?php endif; // end current_user_can() check ?>
       <?php endif; ?>
+	  
+	  
+	  
+	  	<div id="bread-wrap">		
+		
+			<?php // category bread
+			
+			if ( is_single()){
+
+			// Get the parent category
+			$category = get_the_category();
+
+			// Get the ID of a given category
+			 $category_id = get_cat_ID($category[0]->cat_name);
+
+			// Get the URL of this category
+			$category_link = get_category_link( $category_id );
+
+			$catName = $category[0]->cat_name;
+			
+				if($catName == 'English Blog'){
+					echo '<a href=" ' . $category_link . ' ">&laquo; Blog</a>';
+				}else if($catName = 'Cantonese Blog' || $catName = 'Mandarin Blog'){
+					echo '<a href=" ' . $category_link . ' ">&laquo; 博客</a>';
+				}			
+
+						
+			} ?> 
+
+		</div>
+		<br />		
+		<br />

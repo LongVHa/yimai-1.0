@@ -3,8 +3,8 @@
  * The loop that displays posts
  *
  * The loop displays the posts and the post content. See
- * http://codex.wordpress.org/The_Loop to understand it and
- * http://codex.wordpress.org/Template_Tags to understand
+ * https://codex.wordpress.org/The_Loop to understand it and
+ * https://codex.wordpress.org/Template_Tags to understand
  * the tags used in it.
  *
  * This can be overridden in child themes with loop.php or
@@ -27,40 +27,7 @@
 	  ?>
       <div class="blog-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<?php 
-				/*use featured image as parallax bg image*/
-			   if ( has_post_thumbnail() ) : ?>
-
-			<div class="parallax" style="background-image: url(<?php the_post_thumbnail_url('full'); ?>);">
-
-			<h3 class="plx-page-title"><?php the_title(); ?></h3>
-				 
-				<?php
-					/*Get sub heading*/
-					
-					$subHeadTxt = get_post_custom_values('subHeading', $post_id); 
-					
-					$subHeading = preg_replace("[^a-zA-Z., ]", "", $subHeadTxt);
-					
-					echo '<div class="subHeading">'.$subHeading[0].'</div>';
-					
-					?>
-
-			</div>	
-			
-					
-			<?php else : ?>
-
-				<h3 class="page-title"><?php the_title(); ?></a></h3>
-			
-
-			<?php endif;
-				/*end parallax*/
-			?>	
-
-	
         
-		
         <?php if ( !get_the_title() ) : ?>
         <p class="blog-post-meta"><span class="glyphicon glyphicon-calendar"></span> <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php esc_attr_e( 'Permanent Link to ', 'bootstrapcanvaswp' ) . get_the_title() ? esc_attr( the_title_attribute() ) : esc_attr_e( '[No Title]', 'bootstrapcanvaswp' ); ?>"><?php the_time( $date_format ) ?></a> by <span class="glyphicon glyphicon-user"></span> <?php the_author_link() ?></p>
         <?php else : ?>
@@ -130,3 +97,4 @@
 		  <?php get_search_form(); ?>
         <?php endif; // end current_user_can() check ?>
       <?php endif; ?>
+	  
