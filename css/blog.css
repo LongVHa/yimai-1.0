@@ -4,7 +4,6 @@
 
 body {
   word-wrap: break-word;
-  font-family: georgia, serif !important;
   color: #555;
   	overflow-y:scroll;
 	overflow-x:hidden;
@@ -210,6 +209,7 @@ h6,
   font-size: 16px;
   line-height: 1.5;
   color:#000;
+  width:100%;
 }
 .blog-main-right {
   float: right !important;
@@ -271,9 +271,9 @@ nav > .pager > li > a {
  * Blog posts
  */
 
-.blog-post {
-  margin-bottom: 60px;
-}
+/*.blog-post {
+  margin-bottom: 40px;
+}*/
 .blog-post-title {
   margin-bottom: 20px;
   font-size: 40px;
@@ -302,14 +302,14 @@ nav > .pager > li > a {
  */
 
 .blog-footer {
-  padding: 40px 0;
-  color: #ccc;
+  padding: 60px 0;
+  color: #fff;
   text-align: center;
-  background-color: #09272F;
+  background-color: #223d48;
   border-top: 1px solid #e5e5e5;
 }
 .blog-footer a {
-  color: #428bca;
+  color: #fff;
 }
 .blog-footer a:hover,
 .blog-footer a:focus {
